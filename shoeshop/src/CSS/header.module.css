@@ -1,0 +1,40 @@
+.headerdata{
+    display: flex;
+}
+.headerright{
+    display: flex;
+    justify-content: right;
+    width: 50%;
+}
+.headerrightelement{
+    margin-right: 20px;
+}
+.headerdown{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.headercenter{
+    display: flex;
+    justify-content:center;
+}
+
+.imgsize{
+    width: 308px;
+    height: 250px;
+}
+
+.wrapproducts{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.borderCreation{
+    border-style:groove;
+    border-width: 1px;
+}
+
+.borderdetails{
+    border-style: groove none none none;
+}
