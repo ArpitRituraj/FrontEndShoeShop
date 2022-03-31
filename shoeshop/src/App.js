@@ -7,6 +7,7 @@ import ProductDisplay from './Components/ProductDisplay';
 import Pagination from './Components/Pagination';
 import Main from './Components/Main';
 import Login from './Components/Login';
+import CheckoutDetail from './Components/CheckoutDetail';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
      <Routes>
        <Route path='/' element={<Main/>}/>
        <Route path='/cart' element={<Login/>}/>
+       <Route path='/checkoutpage' element={<CheckoutDetail/>}/>
      </Routes>
     </Router>
     </div>

@@ -26,7 +26,9 @@ const [price,totalPrice]=useState(456);
                   <Link to='/'>
                   <button>CONTINUE TO SHOPPING</button>
                   </Link>
-                  <div>CHECKOUT</div>
+                  <Link to='/checkoutpage'>
+                  <button>CHECKOUT</button>
+                  </Link>
               </div>
         </div>
     )
