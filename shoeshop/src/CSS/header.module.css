@@ -42,3 +42,31 @@
 .errorMessage{
     color: red;
 }
+
+.formalign{
+    justify-content: center;
+}
+
+.row{
+    width: 1116px;
+    height: 190.5px;
+    background-color: #e5fee9;
+    margin-left: 104.5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.circle{
+  height: 80px;
+  width: 80px;
+  background-color: #badbcc;
+  border-radius: 50%;
+  position: relative;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.child{
+    position: absolute;
+    margin: 25px 0px 0px 20px;
+}
