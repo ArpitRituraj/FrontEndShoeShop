@@ -2,6 +2,7 @@ import { Fragment, useState } from "react";
 import Header from "./Header";
 import HeaderDown from "./HeaderDown";
 import styles from '../CSS/header.module.css';
+import { Link } from "react-router-dom";
 const CheckoutDetail = () => {
     const [values, setValue] = useState({
         Address: '',
@@ -60,7 +61,7 @@ const CheckoutDetail = () => {
                 <input placeholder="Enter Country" name="Country" value={values.Country} onChange={settingValue} />
                 {(values.isError && values.Country === '') ? <span className={styles.errorMessage}>{values.errorMessage.countryError}</span> : null}
 
-                <button>CONTINUE</button>
+               <Link><button>CONTINUE</button></Link> 
             </form>
         </div>
     )
