@@ -3,7 +3,7 @@ const Header = () => {
     return (
         <div className={styles.headerdata}>
             <div className={styles.headerdata}>
-            <div style={{ 'margin-left': '104.5px', 'margin-right': '96px' }}>
+            <div style={{ 'marginLeft': '104.5px', 'marginRight': '96px' }}>
                 +255 768 356 890
             </div>
             <div>

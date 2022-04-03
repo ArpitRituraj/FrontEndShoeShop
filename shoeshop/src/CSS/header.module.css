@@ -38,3 +38,7 @@
 .borderdetails{
     border-style: groove none none none;
 }
+
+.errorMessage{
+    color: red;
+}
