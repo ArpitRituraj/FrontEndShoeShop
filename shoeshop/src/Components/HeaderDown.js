@@ -3,7 +3,9 @@ import styles from '../CSS/header.module.css';
 const HeaderDown = () => {
     return (
         <div className={styles.headerdown}>
+            <Link to='/'>
             <img alt="logo" src='/Images/logo.png'></img>
+            </Link>
             <div>
             <input placeholder="search"></input>
             <button>Search</button>
