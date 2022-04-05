@@ -1,7 +1,10 @@
 import Styles from '../CSS/header.module.css';
 import Header from './Header';
 import HeaderDown from './HeaderDown';
+import { myContext } from '../App';
+import { useContext } from 'react';
 const PlaceOrder = () => {
+    const item=useContext(myContext);
     return (
         <div>
             <Header />
@@ -32,6 +35,13 @@ const PlaceOrder = () => {
                     <div>Ngaramtoni Crater, P.O</div>
                     <div>BOX 1234 Arusha Tz</div>
                 </div>
+            </div>
+            <div className='product-cart'>
+                <img alt='No Image' src={item.image}></img>
+                {item.productName}
+                QUANTITY
+                SUBTOTAL
+                <hr/>
             </div>
         </div>
     )

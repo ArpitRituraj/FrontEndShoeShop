@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "./Header";
 import HeaderDown from "./HeaderDown";
+import { myContext } from "../App";
 const Login=()=>{
 const [price,totalPrice]=useState(456);
-
+const item=useContext(myContext);
     return(
         <div>
             <Header />
@@ -13,8 +14,8 @@ const [price,totalPrice]=useState(456);
               Total Cart Products (4)
               </div>
               <div>
-                  <img alt='Image' src="/images/2.png"></img>
-                  <span>Nike Girl Shoe</span>
+                  <img alt='Image' src={item.image}></img>
+                  <span>{item.productName}</span>
                   <span> Quantity
                       <select onChange={(e)=>totalPrice((e.target.value)* 456)}>
                           <option>1</option>
