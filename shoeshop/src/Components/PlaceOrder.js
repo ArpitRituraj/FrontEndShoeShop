@@ -4,13 +4,13 @@ import HeaderDown from './HeaderDown';
 import { myContext } from '../App';
 import { useContext, useEffect, useRef, useState } from 'react';
 const PlaceOrder = () => {
-    const item=useContext(myContext);
-    const shippingCharge=useRef(123);
-    const [tax,setTax]=useState(0.00);
-    
-    useEffect(()=>{
-      setTax(parseFloat((item.productPrice)*0.18).toFixed(2))
-    },[item.productPrice])
+    const item = useContext(myContext);
+    const shippingCharge = useRef(123);
+    const [tax, setTax] = useState(0.00);
+
+    useEffect(() => {
+        setTax(parseFloat((item.productPrice) * 0.18).toFixed(2))
+    }, [item.productPrice])
     return (
         <div>
             <Header />
@@ -28,7 +28,7 @@ const PlaceOrder = () => {
                     <div className={Styles.child}>Cart</div>
                 </div>
                 <div style={{ 'marginLeft': '20px', 'marginTop': '10px' }}>
-                Order info
+                    Order info
                     <div>Shipping: Tanzania</div>
                     <div>Pay method: Paypal</div>
                 </div>
@@ -36,38 +36,37 @@ const PlaceOrder = () => {
                     <div className={Styles.child}>Location</div>
                 </div>
                 <div style={{ 'marginLeft': '20px', 'marginTop': '10px' }}>
-                Deliver to
+                    Deliver to
                     <div>Address: Arusha Tz,</div>
                     <div>Ngaramtoni Crater, P.O</div>
                     <div>BOX 1234 Arusha Tz</div>
                 </div>
             </div>
-            <div className='product-cart'>
-                <img alt='No Image' src={item.image}></img>
-                {item.productName}
-                QUANTITY : 1 
-                SUBTOTAL : {item.productPrice +shippingCharge.current + parseFloat(tax)}
-                <hr/>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>Products</td>
-                            <td>${item.productPrice}</td>
-                        </tr>
-                        <tr>
-                            <td>Shipping</td>
-                            <td>${shippingCharge.current}</td>
-                        </tr>
-                        <tr>
-                            <td>Tax</td>
-                            <td>${tax}</td>
-                        </tr>
-                        <tr>
-                            <td>Total</td>
-                            <td>{item.productPrice +shippingCharge.current + parseFloat(tax)}</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div className={Styles.productcart}>
+                    <img alt='No Image' src={item.image}></img>
+                    <div>{item.productName}</div>
+                    <div>QUANTITY : 1</div>
+                    <div>SUBTOTAL : {item.productPrice + shippingCharge.current + parseFloat(tax)}</div>
+                <div>
+                    <table className={Styles.borderCreation}>
+                            <tr>
+                                <td>Products</td>
+                                <td>${item.productPrice}</td>
+                            </tr>
+                            <tr>
+                                <td>Shipping</td>
+                                <td>${shippingCharge.current}</td>
+                            </tr>
+                            <tr>
+                                <td>Tax</td>
+                                <td>${tax}</td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td>{item.productPrice + shippingCharge.current + parseFloat(tax)}</td>
+                            </tr>
+                    </table>
+                </div>
             </div>
         </div>
     )
