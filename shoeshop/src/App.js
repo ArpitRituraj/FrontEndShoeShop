@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
@@ -14,9 +14,12 @@ import PlaceOrder from './Components/PlaceOrder';
 export const myContext = React.createContext();
 
 function App() {
+  const [price,totalPrice]=useState(456);
   const cartData={
     image:'/images/2.png',
-    productName:'Nike Girl Shoe'
+    productName:'Nike Girl Shoe',
+    productPrice:price,
+    priceChanged:totalPrice
   }
   return (
     <div>

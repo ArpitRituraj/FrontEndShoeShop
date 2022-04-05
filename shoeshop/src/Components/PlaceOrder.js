@@ -2,9 +2,15 @@ import Styles from '../CSS/header.module.css';
 import Header from './Header';
 import HeaderDown from './HeaderDown';
 import { myContext } from '../App';
-import { useContext } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 const PlaceOrder = () => {
     const item=useContext(myContext);
+    const shippingCharge=useRef(123);
+    const [tax,setTax]=useState(0.00);
+    
+    useEffect(()=>{
+      setTax(parseFloat((item.productPrice)*0.18).toFixed(2))
+    },[item.productPrice])
     return (
         <div>
             <Header />
@@ -39,9 +45,29 @@ const PlaceOrder = () => {
             <div className='product-cart'>
                 <img alt='No Image' src={item.image}></img>
                 {item.productName}
-                QUANTITY
-                SUBTOTAL
+                QUANTITY : 1 
+                SUBTOTAL : {item.productPrice +shippingCharge.current + parseFloat(tax)}
                 <hr/>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Products</td>
+                            <td>${item.productPrice}</td>
+                        </tr>
+                        <tr>
+                            <td>Shipping</td>
+                            <td>${shippingCharge.current}</td>
+                        </tr>
+                        <tr>
+                            <td>Tax</td>
+                            <td>${tax}</td>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td>{item.productPrice +shippingCharge.current + parseFloat(tax)}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     )
