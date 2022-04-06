@@ -43,12 +43,13 @@ const PlaceOrder = () => {
                 </div>
             </div>
             <div className={Styles.productcart}>
-                    <img alt='No Image' src={item.image}></img>
-                    <div>{item.productName}</div>
-                    <div>QUANTITY : 1</div>
-                    <div>SUBTOTAL : {item.productPrice + shippingCharge.current + parseFloat(tax)}</div>
+                <img alt='No Image' src={item.image}></img>
+                <div>{item.productName}</div>
+                <div>QUANTITY : 1</div>
+                <div>SUBTOTAL : {item.productPrice + shippingCharge.current + parseFloat(tax)}</div>
                 <div>
                     <table className={Styles.borderCreation}>
+                        <tbody>
                             <tr>
                                 <td>Products</td>
                                 <td>${item.productPrice}</td>
@@ -65,6 +66,7 @@ const PlaceOrder = () => {
                                 <td>Total</td>
                                 <td>{item.productPrice + shippingCharge.current + parseFloat(tax)}</td>
                             </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>

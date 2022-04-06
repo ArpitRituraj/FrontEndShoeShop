@@ -4,7 +4,8 @@ import styles from '../CSS/header.module.css';
 import { useNavigate } from "react-router-dom";
 const Payment = () => {
     const navigator=useNavigate();
-    const formContinue=()=>{
+    const formContinue=(e)=>{
+        e.preventDefault();
      navigator('/placeorder');
     }
     return (
