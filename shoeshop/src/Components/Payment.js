@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const Payment = () => {
     const navigator=useNavigate();
     const formContinue=(e)=>{
-        e.preventDefault();
+        e.preventDefault(); 
      navigator('/placeorder');
     }
     return (

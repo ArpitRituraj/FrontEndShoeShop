@@ -1,6 +1,7 @@
 import React, { lazy, Suspense, useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+const ProductDetail= lazy(()=>import('./Components/ProductDetail'));
 const Main = lazy(() => import('./Components/Main'));
 const Login = lazy(() => import('./Components/Login'));
 const CheckoutDetail = lazy(() => import('./Components/CheckoutDetail'));
@@ -41,6 +42,9 @@ function App() {
               element={<Suspense fallback={<div>Loading....</div>}>
                 <PlaceOrder />
               </Suspense>} />
+              <Route path='/products/:productid' element={<Suspense fallback={<div>Loading....</div>}>
+                <ProductDetail/>
+              </Suspense>}/>
           </Routes>
         </Router>
       </myContext.Provider>
