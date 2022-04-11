@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styles from '../CSS/header.module.css';
 import productData from '../Data/productData';
-import {getProduct} from '../redux/actions/action'
+import {getProduct} from '../redux/Actions/actions'
 const ProductDisplay = () => {
     const allProduct=useSelector(state=>state);
     console.log(allProduct);
