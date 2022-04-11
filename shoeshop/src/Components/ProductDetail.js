@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import data from '../Data/productData';
 
 const ProductDetail = () => {
     const { productid } = useParams();
-    const selectedValue = data.filter(value => { return value._id == productid });
+    const indiviualProduct=useSelector(state=>state); 
+    const selectedValue=indiviualProduct.getAllProductRed.filter(value=>{return value._id==productid});
     const [valueSelected,setValueSelected]=useState("select");
     const [comment,setComment]=useState("");
     const dataSubmit =()=>{
